@@ -22,9 +22,6 @@ if (empty($searchResult)) {
 } else {
     foreach ($searchResult as $k => $v) {
         echo filesize($v) > 0 ?  $v . "\n" : "Файл \"$v\" пуст \n";
-        //if (filesize($v) > 0) {
-            //echo $v;
-        //}
     }
 }
 
