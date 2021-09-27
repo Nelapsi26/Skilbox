@@ -17,10 +17,14 @@ function searchFile ($dir, $fileName, &$resArray) {
 
 searchFile($searchRoot, $searchName, $searchResult);
 
-foreach ($searchResult as $k => $v) {
-    if (filesize($v) > 0) {
-        echo $v ;
+if (empty($searchResult)) {
+    echo "Нет совпадений \n";
+} else {
+    foreach ($searchResult as $k => $v) {
+        echo filesize($v) > 0 ?  $v . "\n" : "Файл \"$v\" пуст \n";
+        //if (filesize($v) > 0) {
+            //echo $v;
+        //}
     }
 }
-
 
